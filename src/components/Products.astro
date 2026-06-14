@@ -1,0 +1,91 @@
+---
+const products = [
+  {
+    id: 1,
+    title: "Album photo",
+    description:
+      "Un album imprimé de qualité pour rassembler les meilleurs souvenirs de votre graduation dans un format élégant et durable.",
+    price: "Sur demande",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>`,
+  },
+  {
+    id: 2,
+    title: "Welcome card",
+    description:
+      "Une carte de bienvenue personnalisée pour votre table, votre espace photo ou votre cérémonie, avec votre nom, votre filière et le thème de votre graduation.",
+    price: "Sur demande",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" /></svg>`,
+  },
+  {
+    id: 3,
+    title: "Tenue / Toge de graduation",
+    description:
+      "Des tenues de graduation élégantes pour vos photos, votre cérémonie et votre photoshoot extérieur.",
+    price: "Sur demande",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 3.741-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>`,
+  },
+];
+---
+
+<section id="produits" class="py-24 md:py-32 px-6 md:px-12 bg-[#F8F8F5]" aria-labelledby="products-heading">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <p class="text-xs font-semibold tracking-[0.3em] uppercase mb-4 text-[#777777]">Souvenirs durables</p>
+      <h2 id="products-heading" class="font-display text-4xl md:text-5xl font-bold text-[#050505] mb-4" style="font-family: 'Playfair Display', serif;">
+        Nos produits graduation
+      </h2>
+      <div class="section-divider mt-6 mb-6"></div>
+      <p class="text-[#777777] text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+        Des souvenirs physiques et personnalisés pour compléter votre expérience.
+      </p>
+    </div>
+
+    <!-- Products grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {products.map((product) => (
+        <article class="card-hover bg-[#FDFDFB] border border-[#E6E6E6] rounded-2xl overflow-hidden group" aria-label={product.title}>
+
+          <!-- Image placeholder -->
+          <div class="relative h-56 bg-[#F8F8F5] overflow-hidden flex items-center justify-center border-b border-[#E6E6E6]">
+            <div class="text-[#2A2A2A]/30 group-hover:text-[#2A2A2A]/60 transition-colors duration-300" aria-hidden="true">
+              <Fragment set:html={product.icon} />
+            </div>
+
+            <!-- Corner accents -->
+            <div class="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-[#E6E6E6] rounded-tr-sm group-hover:border-[#050505] transition-colors duration-300"></div>
+            <div class="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-[#E6E6E6] rounded-bl-sm group-hover:border-[#050505] transition-colors duration-300"></div>
+
+            <!-- Price badge -->
+            <div class="absolute top-4 left-4">
+              <span class="text-xs font-semibold px-3 py-1 rounded-full border border-[#E6E6E6] text-[#777777] bg-white">
+                {product.price}
+              </span>
+            </div>
+          </div>
+
+          <!-- Card body -->
+          <div class="p-6">
+            <h3 class="font-display text-xl font-semibold text-[#050505] mb-3" style="font-family: 'Playfair Display', serif;">
+              {product.title}
+            </h3>
+            <p class="text-[#777777] text-sm leading-relaxed mb-6">
+              {product.description}
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 text-sm font-semibold text-[#050505] hover:gap-3 transition-all duration-200"
+              aria-label={`Demander le produit : ${product.title}`}
+            >
+              Demander ce produit
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

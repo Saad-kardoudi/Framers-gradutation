@@ -1,0 +1,152 @@
+---
+---
+
+<section class="relative w-full h-screen min-h-screen flex items-center justify-center overflow-hidden bg-[#F8F8F5]" aria-label="Hero">
+  <!-- Background Video — washed editorial overlay -->
+  <video
+    class="absolute inset-0 w-full h-full object-cover"
+    src="/videos/graduation-hero.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    aria-hidden="true"
+    preload="auto"
+  ></video>
+
+  <!-- Light overlay: frosted/editorial look -->
+  <div class="absolute inset-0" style="background: rgba(0,0,0,0.7);" aria-hidden="true"></div>
+  <!-- Subtle vignette -->
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%);" aria-hidden="true"></div>
+
+  <!-- Bottom border -->
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-[#E6E6E6]" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <nav class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-12 py-6">
+    <a id="logo" href="#hero" class="font-display text-xl font-bold tracking-widest uppercase text-[#ffffff]" style="font-family: 'Playfair Display', serif;">
+      Framers
+    </a>
+    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-[#777777]">
+      <li><a href="#services" class="hover:text-[#ffffff] transition-colors duration-200">Services</a></li>
+      <li><a href="#produits" class="hover:text-[#ffffff] transition-colors duration-200">Produits</a></li>
+      <li><a href="#avis" class="hover:text-[#ffffff] transition-colors duration-200">Avis</a></li>
+      <li>
+        <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm tracking-wide">
+          Réserver
+        </a>
+      </li>
+    </ul>
+    <!-- Mobile toggle -->
+    <button
+      id="mobile-menu-toggle"
+      class="md:hidden text-[#ffffff] hover:text-[#ffffff] transition-colors p-2"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="absolute top-0 left-0 right-0 bg-white/97 backdrop-blur-sm z-10 pt-20 pb-8 px-6 hidden flex-col gap-1 text-center border-b border-[#E6E6E6]"
+  >
+    <a href="#services" class="block py-3.5 text-[#2A2A2A] hover:text-[#050505] text-base font-medium border-b border-[#E6E6E6]" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
+    <a href="#produits" class="block py-3.5 text-[#2A2A2A] hover:text-[#050505] text-base font-medium border-b border-[#E6E6E6]" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Produits</a>
+    <a href="#avis" class="block py-3.5 text-[#2A2A2A] hover:text-[#050505] text-base font-medium border-b border-[#E6E6E6]" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Avis</a>
+    <a href="#contact" class="block mt-5 btn-primary py-3.5 px-8 rounded-full font-bold text-center" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Réserver ma date</a>
+  </div>
+
+  <!-- Hero Content -->
+  <div id="hero" class="relative z-9 text-center px-6 md:px-12 max-w-5xl mx-auto">
+    <!-- Eyebrow -->
+    <p
+      class="animate-fade-in text-xs font-semibold tracking-[0.3em] uppercase mb-6 text-[#777777] opacity-0"
+      style="animation-fill-mode: forwards;"
+    >
+      Photography &amp; Videography <br> — 
+    </p>
+
+    <!-- H1 -->
+    <h1
+      class="animate-fade-in-up delay-200 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-[#ffffff] opacity-0"
+      style="font-family: 'Playfair Display', serif; animation-fill-mode: forwards;"
+    >
+      Votre soutenance mérite<br />
+      <em class="not-italic" style="border-bottom: 3px solid #ffffff; padding-bottom: 2px;">plus qu'un simple souvenir.</em>
+    </h1>
+
+    <!-- Subheadline -->
+    <p
+      class="animate-fade-in-up delay-400 text-base md:text-lg text-[#b8b8b8] max-w-2xl mx-auto leading-relaxed mb-10 opacity-0"
+      style="animation-fill-mode: forwards;"
+    >
+      Framers capture chaque moment de votre soutenance <!--et de votre journée de graduation au Maroc : photos spontanées, photoshoot moderne, vidéo intégrale et best-of cinématique.-->
+    </p>
+
+    <!-- CTA Buttons -->
+    <div
+      class="animate-fade-in-up delay-600 flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 opacity-0"
+      style="animation-fill-mode: forwards;"
+    >
+      <a
+        href="#contact"
+        class="btn-primary px-8 py-4 rounded-full text-base tracking-wide w-full sm:w-auto text-center"
+        aria-label="Réserver ma date de graduation"
+      >
+        Réserver ma date
+      </a>
+      <a
+        href="#services"
+        class="btn-outline px-8 py-4 rounded-full text-base w-full sm:w-auto text-center"
+        aria-label="Voir nos services"
+      >
+        Voir nos services
+      </a>
+    </div>
+
+    <!-- Trust text -->
+    <p
+      class="animate-fade-in-up delay-800 text-xs md:text-sm text-[#777777] tracking-wide opacity-0"
+      style="animation-fill-mode: forwards;"
+    >
+      Disponible au Maroc — écoles, universités, instituts et cérémonies privées.
+    </p>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce" aria-hidden="true">
+    <svg class="w-5 h-5 text-[#777777]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+</section>
+
+<script>
+  const toggle = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const logo = document.getElementById("logo");
+  if (toggle && menu && logo) {
+    toggle.addEventListener("click", () => {
+      const isHidden = menu.classList.contains("hidden");
+      if (!isHidden === false) {
+        logo.classList.remove("text-[#ffffff]");
+        logo.classList.add("text-[#000000]");
+        toggle.classList.remove("text-[#ffffff]");
+        toggle.classList.add("text-[#000000]");
+      } else {
+        logo.classList.remove("text-[#000000]");
+        logo.classList.add("text-[#ffffff]");
+        toggle.classList.remove("text-[#000000]");
+        toggle.classList.add("text-[#ffffff]");
+      }
+      menu.classList.toggle("hidden", !isHidden);
+      menu.style.display = isHidden ? "flex" : "none";
+      toggle.setAttribute("aria-expanded", String(isHidden));
+    });
+  }
+</script>

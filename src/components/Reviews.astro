@@ -1,0 +1,117 @@
+---
+const reviews = [
+  {
+    name: "Imane B.",
+    role: "Étudiante en Génie Civil",
+    text: "L'équipe Framers a capturé ma soutenance d'une façon magnifique. Les photos étaient naturelles et la vidéo best-of était vraiment émouvante.",
+    rating: 5,
+    initials: "IB",
+  },
+  {
+    name: "Yassine E.",
+    role: "Diplômé en Finance",
+    text: "Service professionnel du début jusqu'à la fin. J'ai reçu des photos de qualité avec ma famille, mes amis et le jury. Je recommande vivement.",
+    rating: 5,
+    initials: "YE",
+  },
+  {
+    name: "Salma R.",
+    role: "Master en Marketing",
+    text: "Le photoshoot extérieur était incroyable. Les poses étaient modernes et le rendu final très premium. Tout le monde a adoré les photos.",
+    rating: 5,
+    initials: "SR",
+  },
+  {
+    name: "Anas M.",
+    role: "Doctorant en Droit",
+    text: "La vidéo intégrale m'a permis de garder toute ma présentation et les remarques du jury. Très bon service, équipe sérieuse et efficace.",
+    rating: 5,
+    initials: "AM",
+  },
+  {
+    name: "Nour K.",
+    role: "Étudiante en Médecine",
+    text: "Framers ont rendu notre cérémonie inoubliable. Les photos de groupe étaient parfaites et la qualité de la vidéo était digne d'un film.",
+    rating: 5,
+    initials: "NK",
+  },
+  {
+    name: "Mehdi T.",
+    role: "Ingénieur diplômé",
+    text: "Je recommande à 100%. Le team est réactif, ponctuel et livre un travail de très haute qualité. Mes parents étaient ravis des souvenirs.",
+    rating: 5,
+    initials: "MT",
+  },
+];
+---
+
+<section id="avis" class="py-24 md:py-32 px-6 md:px-12 bg-white" aria-labelledby="reviews-heading">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <p class="text-xs font-semibold tracking-[0.3em] uppercase mb-4 text-[#777777]">Témoignages</p>
+      <h2 id="reviews-heading" class="font-display text-4xl md:text-5xl font-bold text-[#050505] mb-4" style="font-family: 'Playfair Display', serif;">
+        Ils nous ont fait confiance
+      </h2>
+      <div class="section-divider mt-6 mb-6"></div>
+      <p class="text-[#777777] text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+        Des centaines d'étudiants et de familles au Maroc ont vécu leur graduation avec Framers.
+      </p>
+    </div>
+
+    <!-- Reviews grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {reviews.map((review) => (
+        <article
+          class="card-hover bg-[#FDFDFB] border border-[#E6E6E6] rounded-2xl p-7 flex flex-col gap-4"
+          aria-label={`Avis de ${review.name}`}
+        >
+          <!-- Stars -->
+          <div class="flex gap-1" aria-label={`Note : ${review.rating} étoiles sur 5`}>
+            {Array.from({ length: review.rating }).map(() => (
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-[#050505]" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
+              </svg>
+            ))}
+          </div>
+
+          <!-- Review text -->
+          <blockquote class="text-[#2A2A2A] text-sm leading-relaxed flex-1">
+            "{review.text}"
+          </blockquote>
+
+          <!-- Reviewer -->
+          <div class="flex items-center gap-3 pt-3 border-t border-[#E6E6E6]">
+            <div
+              class="w-10 h-10 rounded-full bg-[#050505] flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
+              aria-hidden="true"
+            >
+              {review.initials}
+            </div>
+            <div>
+              <p class="text-[#050505] font-semibold text-sm">{review.name}</p>
+              <p class="text-[#777777] text-xs">{review.role}</p>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Trust stats -->
+    <div class="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto text-center border-t border-[#E6E6E6] pt-12">
+      <div class="p-4">
+        <p class="text-3xl md:text-4xl font-bold text-[#050505]" style="font-family: 'Playfair Display', serif;">200+</p>
+        <p class="text-[#777777] text-xs md:text-sm mt-1">Graduations capturées</p>
+      </div>
+      <div class="p-4 border-x border-[#E6E6E6]">
+        <p class="text-3xl md:text-4xl font-bold text-[#050505]" style="font-family: 'Playfair Display', serif;">5.0</p>
+        <p class="text-[#777777] text-xs md:text-sm mt-1">Note moyenne</p>
+      </div>
+      <div class="p-4">
+        <p class="text-3xl md:text-4xl font-bold text-[#050505]" style="font-family: 'Playfair Display', serif;">100%</p>
+        <p class="text-[#777777] text-xs md:text-sm mt-1">Clients satisfaits</p>
+      </div>
+    </div>
+  </div>
+</section>
