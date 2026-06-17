@@ -11,6 +11,7 @@ const products = [
   {
     id: 2,
     title: "Welcome card",
+    img:'/images/products/Welcome_card.jpg',
     description:
       "Une carte de bienvenue personnalisée pour votre table, votre espace photo ou votre cérémonie, avec votre nom, votre filière et le thème de votre graduation.",
     price: "Sur demande",
@@ -19,6 +20,7 @@ const products = [
   {
     id: 3,
     title: "Tenue / Toge de graduation",
+    img:'/images/products/togu.png',
     description:
       "Des tenues de graduation élégantes pour vos photos, votre cérémonie et votre photoshoot extérieur.",
     price: "Sur demande",
@@ -49,7 +51,17 @@ const products = [
 
           <!-- Image placeholder -->
           <div class="relative h-56 bg-[#F8F8F5] overflow-hidden flex items-center justify-center border-b border-[#E6E6E6]">
-            <div class="text-[#2A2A2A]/30 group-hover:text-[#2A2A2A]/60 transition-colors duration-300" aria-hidden="true">
+            {product.img &&
+              <img
+                src={product.img}
+                alt={product.title}
+                class="absolute inset-0 w-full h-full object-cover object-top"
+                style="z-index:0;"
+                loading="lazy"
+                draggable="false"
+              />
+            }      
+            <div class="text-[#2A2A2A]/30 group-hover:text-[#2A2A2A]/60 transition-colors duration-300 z-10" aria-hidden="true">
               <Fragment set:html={product.icon} />
             </div>
 
@@ -58,9 +70,9 @@ const products = [
             <div class="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-[#E6E6E6] rounded-bl-sm group-hover:border-[#050505] transition-colors duration-300"></div>
 
             <!-- Price badge -->
-            <div class="absolute top-4 left-4">
+            <div class="absolute top-4 left-4 z-10">
               <span class="text-xs font-semibold px-3 py-1 rounded-full border border-[#E6E6E6] text-[#777777] bg-white">
-                {product.price}
+                {product.price} 
               </span>
             </div>
           </div>
